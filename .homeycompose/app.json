@@ -1,0 +1,57 @@
+{
+  "id": "com.adurosmart.eria",
+  "version": "1.2.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#E37821",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "nl": "AduroSmart Eria",
+    "en": "AduroSmart Eria"
+  },
+  "description": {
+    "nl": "Uw leven slimmer en leuker maken.",
+    "en": "Make your live smarter and more fun."
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "tags": {
+    "nl": [
+      "Eria",
+      "ArduroSmart",
+      "Dimbaar",
+      "Slim Stopcontact",
+      "Energy meting",
+      "Contact sensor"
+    ],
+    "en": [
+      "Eria",
+      "ArduroSmart",
+      "Dimmable",
+      "Smart Power Socket",
+      "Energy Measurement",
+      "Contact sensor"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Marijn van der Steen",
+    "email": "mmavdsteen+homeydevelopment@gmail.com"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "MarijnvanderSteen"
+      }
+    }
+  },
+  "support": "mailto:mmavdsteen+eria+app+support@gmail.com"
+}

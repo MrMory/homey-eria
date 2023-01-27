@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "Current Summation Delivered"},
+  "getable": true,
+  "setable": false,
+  "units": { "en": "kWh"},
+  "uiComponent": "sensor",
+  "insights": true
+}

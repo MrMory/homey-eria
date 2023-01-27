@@ -1,0 +1,319 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.adurosmart.eria",
+  "version": "1.2.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#E37821",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "nl": "AduroSmart Eria",
+    "en": "AduroSmart Eria"
+  },
+  "description": {
+    "nl": "Uw leven slimmer en leuker maken.",
+    "en": "Make your live smarter and more fun."
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "tags": {
+    "nl": [
+      "Eria",
+      "ArduroSmart",
+      "Dimbaar",
+      "Slim Stopcontact",
+      "Energy meting",
+      "Contact sensor"
+    ],
+    "en": [
+      "Eria",
+      "ArduroSmart",
+      "Dimmable",
+      "Smart Power Socket",
+      "Energy Measurement",
+      "Contact sensor"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Marijn van der Steen",
+    "email": "mmavdsteen+homeydevelopment@gmail.com"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "MarijnvanderSteen"
+      }
+    }
+  },
+  "support": "mailto:mmavdsteen+eria+app+support@gmail.com",
+  "drivers": [
+    {
+      "name": {
+        "en": "Dimmable Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "AduroSmart Eria",
+        "productId": [
+          "BDP3001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              3,
+              6,
+              8,
+              5,
+              4096
+            ],
+            "bindings": [
+              25
+            ]
+          }
+        },
+        "learnmode": {
+          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/adurosmart-eria-dim-plug/assets/images/small.jpg",
+        "large": "/drivers/adurosmart-eria-dim-plug/assets/images/large.jpg",
+        "xlarge": "/drivers/adurosmart-eria-dim-plug/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "adurosmart-eria-dim-plug"
+    },
+    {
+      "name": {
+        "en": "On/Off Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": "AduroSmart Eria",
+        "productId": [
+          "BPU3"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              3,
+              6,
+              5,
+              4096
+            ],
+            "bindings": [
+              25
+            ]
+          }
+        },
+        "learnmode": {
+          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/adurosmart-eria-on-off-plug/assets/images/small.jpg",
+        "large": "/drivers/adurosmart-eria-on-off-plug/assets/images/large.jpg",
+        "xlarge": "/drivers/adurosmart-eria-on-off-plug/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "adurosmart-eria-on-off-plug"
+    },
+    {
+      "name": {
+        "en": "Power Analytics Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "meter_power",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "onoff"
+      ],
+      "zigbee": {
+        "manufacturerName": "AduroSmart Eria",
+        "productId": [
+          "AD-SmartPlug3001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              3,
+              6,
+              5,
+              4096,
+              2820,
+              1794
+            ],
+            "bindings": [
+              25
+            ]
+          }
+        },
+        "learnmode": {
+          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/adurosmart-eria-power-analytics-plug/assets/images/small.jpg",
+        "large": "/drivers/adurosmart-eria-power-analytics-plug/assets/images/large.jpg",
+        "xlarge": "/drivers/adurosmart-eria-power-analytics-plug/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "adurosmart-eria-power-analytics-plug"
+    },
+    {
+      "name": {
+        "en": "Contact Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": "ADUROLIGHT",
+        "productId": [
+          "CSW_ADUROLIGHT"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              1280,
+              65535,
+              1
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/adurosmart-wireless-contact-sensor/assets/images/small.jpg",
+        "large": "/drivers/adurosmart-wireless-contact-sensor/assets/images/large.jpg",
+        "xlarge": "/drivers/adurosmart-wireless-contact-sensor/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "adurosmart-wireless-contact-sensor"
+    }
+  ],
+  "capabilities": {
+    "meter_power_summed": {
+      "type": "number",
+      "title": {
+        "en": "Current Summation Delivered"
+      },
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "kWh"
+      },
+      "uiComponent": "sensor",
+      "insights": true
+    }
+  }
+}

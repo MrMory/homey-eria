@@ -1,0 +1,20 @@
+{
+  "1.0.1": {
+    "en": "Added functionality for 3 types of smart sockets"
+  },
+  "1.1.0": {
+    "en": "expanded functionality for power analytics socket"
+  },
+  "1.1.1": {
+    "en": "added support for contact sensor"
+  },
+  "1.1.2": {
+    "en": "updated cluster information for contact sensor"
+  },
+  "1.2.0": {
+    "en": "added functionality for contact sensor and performance upgrade for power analytics plug"
+  },
+  "1.2.1": {
+    "en": "added extra logging and changed which alarm to read for zonestatus"
+  }
+}

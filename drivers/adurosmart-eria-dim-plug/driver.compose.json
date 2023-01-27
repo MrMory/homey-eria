@@ -1,0 +1,48 @@
+{
+  "name": {
+    "en": "Dimmable Plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "AduroSmart Eria",
+    "productId": ["BDP3001"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 4, 3, 6, 8, 5, 4096],
+        "bindings": [25]
+      }
+    },
+    "learnmode": {
+      "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+      "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.jpg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

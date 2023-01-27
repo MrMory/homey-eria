@@ -1,0 +1,48 @@
+{
+  "name": {
+    "en": "Contact Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "alarm_tamper",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": ["CR2"]
+  },
+  "zigbee": {
+    "manufacturerName": "ADUROLIGHT",
+    "productId": ["CSW_ADUROLIGHT"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 1280, 65535, 1],
+        "bindings": []
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.jpg"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

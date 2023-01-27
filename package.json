@@ -1,0 +1,21 @@
+{
+  "name": "com.bmd.eria",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.11",
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.1",
+    "@types/node": "^18.7.6",
+    "eslint": "^7.32.0",
+    "eslint-config-athom": "^3.1.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "homey-zigbeedriver": "^1.6.12",
+    "zigbee-clusters": "^1.5.2"
+  }
+}
