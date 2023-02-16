@@ -107,6 +107,23 @@ class PowerAnalyticsPlug extends ZigBeeDevice {
             },
         });
     }
+
+    async OnSettings({ oldSettings, newSettings, changedKeys }: any) {
+        try{
+            console.log(newSettings);
+            if (changedKeys.includes('report_interval_OnOff')) {
+
+            }
+
+            if (changedKeys.includes('report_interval_measure')) {
+
+            }
+
+            }catch (err) {
+            // reset settings values on failed update
+            throw new Error(`failed to update settings. Message:${err}`);
+        }
+    }
 }
 
 module.exports = PowerAnalyticsPlug;
