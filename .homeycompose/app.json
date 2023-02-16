@@ -1,6 +1,6 @@
 {
   "id": "com.adurosmart.eria",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#E37821",
@@ -45,6 +45,18 @@
   "author": {
     "name": "Marijn van der Steen",
     "email": "mmavdsteen+homeydevelopment@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Marijn van der Steen",
+        "email": "mmavdsteen+homeydevelopment@gmail.com"
+      },
+      {
+        "name": "Florian Schaal",
+        "email": "f.schaal01@gmail.com"
+      }
+    ]
   },
   "contributing": {
     "donate": {

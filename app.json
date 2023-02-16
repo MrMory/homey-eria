@@ -87,8 +87,11 @@
           }
         },
         "learnmode": {
-          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
-          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          "image": "/drivers/adurosmart-eria-dim-plug/assets/icon.svg",
+          "instruction": {
+            "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren. Zet hierna het apparaat aan en uit.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+            "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light. Now turn the device on and off.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          }
         }
       },
       "platforms": [
@@ -113,6 +116,26 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "report_interval_OnOff",
+          "type": "number",
+          "label": {
+            "en": "Report Interval On / Off",
+            "nl": "Report Interval Aan / Uit"
+          },
+          "hint": {
+            "en": "This setting determines the interval on which Homey will check the current state of the device.",
+            "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 86400
+          }
         }
       ],
       "id": "adurosmart-eria-dim-plug"
@@ -146,8 +169,11 @@
           }
         },
         "learnmode": {
-          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
-          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          "image": "/drivers/adurosmart-eria-on-off-plug/assets/icon.svg",
+          "instruction": {
+            "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren. Zet hierna het apparaat aan en uit.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+            "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light. Now turn the device on and off.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          }
         }
       },
       "platforms": [
@@ -172,6 +198,26 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "report_interval_OnOff",
+          "type": "number",
+          "label": {
+            "en": "Report Interval On / Off",
+            "nl": "Report Interval Aan / Uit"
+          },
+          "hint": {
+            "en": "This setting determines the interval on which Homey will check the current state of the device.",
+            "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 86400
+          }
         }
       ],
       "id": "adurosmart-eria-on-off-plug"
@@ -211,8 +257,11 @@
           }
         },
         "learnmode": {
-          "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
-          "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          "image": "/drivers/adurosmart-eria-power-analytics-plug/assets/icon.svg",
+          "instruction": {
+            "nl": "Houd de knop 2 seconden ingedrukt en laat daarna los. Het licht zal nu groen pulseren. Zet hierna het apparaat aan en uit.\n\nNote: als dit niet direct werkt, houdt dan de knop voor 5+ seconden ingedrukt tot dat het licht een aantal keren snel knippert, laat los, en probeer de pairing methode opnieuw.",
+            "en": "Press and hold the button for 2 seconds and release. The device should now have a pulsing green light. Now turn the device on and off.\n\nNote: if this doesn't work right away, hold the button for 5+ seconds until it rapidly blinks a couple of times, release, and try the pairing method again."
+          }
         }
       },
       "platforms": [
@@ -237,6 +286,44 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "report_interval_OnOff",
+          "type": "number",
+          "label": {
+            "en": "Report Interval On / Off",
+            "nl": "Report Interval Aan / Uit"
+          },
+          "hint": {
+            "en": "This setting determines the interval on which Homey will check the current state of the device.",
+            "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 86400
+          }
+        },
+        {
+          "id": "report_interval_measure",
+          "type": "number",
+          "label": {
+            "en": "Report Interval Current Power Consumption",
+            "nl": "Report Interval Huidige Stroom Verbruik"
+          },
+          "hint": {
+            "en": "This setting determines the interval on which Homey will check the current state of the device.",
+            "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 86400
+          }
         }
       ],
       "id": "adurosmart-eria-power-analytics-plug"

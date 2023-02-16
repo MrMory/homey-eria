@@ -1,56 +1,35 @@
-import Homey from 'homey';
-import { ZigBeeDevice } from 'homey-zigbeedriver';
-import { debug, CLUSTER } from 'zigbee-clusters';
-
-// debug(true);
+import {ZigBeeDevice} from 'homey-zigbeedriver';
+import {debug, CLUSTER} from 'zigbee-clusters';
 
 class DimPlug extends ZigBeeDevice {
 
-  async onNodeInit({ zclNode }: any) {
-    this.registerCapability("onoff", CLUSTER.ON_OFF, {
-      endpoint: 1
-    });
+    async onNodeInit({zclNode}: any) {
 
-    this.registerCapability("dim", CLUSTER.LEVEL_CONTROL, {
-      endpoint: 1
-    });
-  }
+        // enable debugging
+        //this.enableDebug();
 
-  /**
-   * onAdded is called when the user adds the device, called just after pairing.
-   */
-  async onAdded() {
-    this.log('Dim Plug has been added');
-  }
+        // Enables debug logging in zigbee-clusters
+        //debug(true);
 
-  /**
-   * onSettings is called when the user updates the device's settings.
-   * @param {object} event the onSettings event data
-   * @param {object} event.oldSettings The old settings object
-   * @param {object} event.newSettings The new settings object
-   * @param {string[]} event.changedKeys An array of keys changed since the previous version
-   * @returns {Promise<string|void>} return a custom message that will be displayed
-   */
-  async onSettings({ oldSettings: {}, newSettings: {}, changedKeys: {} }): Promise<string|void> {
-    this.log('Dim Plug settings where changed');
-  }
+        // print the node's info to the console
+        //this.printNode();
 
-  /**
-   * onRenamed is called when the user updates the device's name.
-   * This method can be used this to synchronise the name to the device.
-   * @param {string} name The new name
-   */
-  async onRenamed(name: string) {
-    this.log('Dim Plug was renamed');
-  }
+        if (this.hasCapability('onoff')) {
+            this.registerCapability('onoff', CLUSTER.ON_OFF, {
+                getOpts: {
+                    // If the power plug is controlled by homey the state will be switch directly
+                    // If power plug is toggled on the plug itself often this value can be changed to fit the users needs in the settings
+                    pollInterval: this.getSetting('report_interval_OnOff') * 1000 || 60000,
+                },
+            });
+        }
 
-  /**
-   * onDeleted is called when the user deleted the device.
-   */
-  async onDeleted() {
-    this.log('Dim Plug has been deleted');
-  }
-
+        if (this.hasCapability('dim')) {
+            this.registerCapability("dim", CLUSTER.LEVEL_CONTROL, {
+                endpoint: 1
+            });
+        }
+    }
 }
 
 module.exports = DimPlug;
