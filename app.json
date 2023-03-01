@@ -130,6 +130,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "adurosmart-eria-dim-plug",
       "settings": [
         {
           "id": "report_interval_OnOff",
@@ -149,8 +150,7 @@
             "max": 86400
           }
         }
-      ],
-      "id": "adurosmart-eria-dim-plug"
+      ]
     },
     {
       "name": {
@@ -212,6 +212,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "adurosmart-eria-on-off-plug",
       "settings": [
         {
           "id": "report_interval_OnOff",
@@ -231,8 +232,7 @@
             "max": 86400
           }
         }
-      ],
-      "id": "adurosmart-eria-on-off-plug"
+      ]
     },
     {
       "name": {
@@ -300,6 +300,7 @@
           "template": "add_devices"
         }
       ],
+      "id": "adurosmart-eria-power-analytics-plug",
       "settings": [
         {
           "id": "report_interval_OnOff",
@@ -337,8 +338,7 @@
             "max": 86400
           }
         }
-      ],
-      "id": "adurosmart-eria-power-analytics-plug"
+      ]
     },
     {
       "name": {

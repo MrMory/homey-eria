@@ -6,23 +6,17 @@ class PowerAnalyticsPlug extends ZigBeeDevice {
     async onNodeInit({zclNode}: any) {
 
         // enable debugging
-        this.enableDebug();
+        //this.enableDebug();
 
         // Enables debug logging in zigbee-clusters
-        debug(true);
+        //debug(true);
 
         // print the node's info to the console
-        this.printNode();
+        //this.printNode();
 
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', CLUSTER.ON_OFF, {
-                getOpts: {
-                    // If the power plug is controlled by homey the state will be switch directly
-                    // If power plug is toggled on the plug itself often this value can be changed to fit the users needs in the settings
-                    pollInterval: this.getSetting('report_interval_OnOff') * 1000 || 60000,
-                },
-            });
-        }
+        this.registerOnOffCapability(this.getSettings('report_interval_OnOff'));
+
+        this.registerMeasurePowerCapability(this.getSetting('report_interval_measure'));
 
         if (this.hasCapability('meter_power')) {
             this.registerCapability('meter_power', CLUSTER.METERING, {
@@ -46,33 +40,6 @@ class PowerAnalyticsPlug extends ZigBeeDevice {
                     return report / 1000
                 },
                 endpoint: this.getClusterEndpoint(CLUSTER.METERING),
-            });
-        }
-
-        if (this.hasCapability('measure_power')) {
-            this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
-                get: 'activePower',
-                getOpts: {
-                    getOnStart: true,
-                    getOnOnline: true,
-                    // If you are not actively triggering based on power change it's not needed to fetch data every second.
-                    // This can be changed in settings to fit the users needs
-                    pollInterval: this.getSetting('report_interval_measure') * 1000 || 60000,
-                },
-                reportOpts: {
-                    configureAttributeReporting: {
-                        minInterval: 0, // No minimum reporting interval
-                        maxInterval: 300, // Maximally every ~16 hours
-                        minChange: 1, // Report when value changed by 1
-                    },
-                },
-                report: 'activePower',
-                reportParser(report: number) {
-                    console.log(`reported active power: ${report}`)
-                    if(report < 0) return 0;
-                    return report / 10
-                },
-                endpoint: this.getClusterEndpoint(CLUSTER.ELECTRICAL_MEASUREMENT),
             });
         }
 
@@ -106,6 +73,65 @@ class PowerAnalyticsPlug extends ZigBeeDevice {
                 return report / 10;
             },
         });
+    }
+
+    async onSettings({oldSettings, newSettings, changedKeys}: any) {
+
+        try {
+            if (changedKeys.includes('report_interval_OnOff')) {
+                this.registerOnOffCapability(newSettings.report_interval_OnOff)
+            }
+
+            if (changedKeys.includes('report_interval_measure')) {
+                this.registerMeasurePowerCapability(newSettings.report_interval_measure);
+            }
+
+        } catch (err) {
+            // reset settings values on failed update
+            throw new Error(`failed to update settings. Message:${err}`);
+        }
+    }
+
+    registerOnOffCapability(pollInterval: number = 60000) {
+        if (this.hasCapability('onoff')) {
+            this.registerCapability('onoff', CLUSTER.ON_OFF, {
+                getOpts: {
+                    // If the power plug is controlled by homey the state will be switch directly
+                    // If power plug is toggled on the plug itself often this value can be changed to fit the users needs in the settings
+                    pollInterval: pollInterval * 1000 || 60000,
+                },
+            });
+        }
+    }
+
+    registerMeasurePowerCapability(pollInterval: number = 60000) {
+        if (this.hasCapability('measure_power')) {
+            this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
+                get: 'activePower',
+                getOpts: {
+                    getOnStart: true,
+                    getOnOnline: true,
+                    // If you are not actively triggering based on power change it's not needed to fetch data every second.
+                    // This can be changed in settings to fit the users needs
+                    pollInterval: pollInterval * 1000 || 60000,
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 0, // No minimum reporting interval
+                        maxInterval: 300, // Maximally every ~16 hours
+                        minChange: 1, // Report when value changed by 1
+                    },
+                },
+                report: 'activePower',
+                reportParser(report: number) {
+                    console.log(`reported active power: ${report}`)
+                    console.log(`Current interval from settings: ${pollInterval}`)
+                    if (report < 0) return 0;
+                    return report / 10
+                },
+                endpoint: this.getClusterEndpoint(CLUSTER.ELECTRICAL_MEASUREMENT),
+            });
+        }
     }
 }
 

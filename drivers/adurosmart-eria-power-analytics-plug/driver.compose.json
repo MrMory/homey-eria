@@ -63,43 +63,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "settings": [
-    {
-      "id": "report_interval_OnOff",
-      "type": "number",
-      "label": {
-        "en": "Report Interval On / Off",
-        "nl": "Report Interval Aan / Uit"
-      },
-      "hint": {
-        "en": "This setting determines the interval on which Homey will check the current state of the device.",
-        "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
-      },
-      "value": 60,
-      "attr": {
-        "step": 1,
-        "min": 1,
-        "max": 86400
-      }
-    },
-    {
-      "id": "report_interval_measure",
-      "type": "number",
-      "label": {
-        "en": "Report Interval Current Power Consumption",
-        "nl": "Report Interval Huidige Stroom Verbruik"
-      },
-      "hint": {
-        "en": "This setting determines the interval on which Homey will check the current state of the device.",
-        "nl": "Deze instelling bepaalt de waarde waarop Homey de huidige status ophaalt bij het apparaat."
-      },
-      "value": 60,
-      "attr": {
-        "step": 1,
-        "min": 1,
-        "max": 86400
-      }
-    }
   ]
 }
